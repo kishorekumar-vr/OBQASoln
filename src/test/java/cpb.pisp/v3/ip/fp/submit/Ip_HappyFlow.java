@@ -15,6 +15,5 @@ public class Ip_HappyFlow extends BaseSubmitTests{
         env.getPisp().setBaseUrl("http://localhost:8089");
         env.getTppAuthN().setTokenEndpointUrl("http://localhost:8089");
        this.successfulSubmit(env);
-
     }
 }
