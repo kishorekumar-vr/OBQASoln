@@ -1,0 +1,48 @@
+{
+  "customer": {
+    "pin": "1212",
+    "password": "S1XDIG"
+  },
+  "customerAuthN": {
+    "hostHeader": "iam-authn-sit-ubn.managedtest.com",
+    "baseUrl": "https://iam-authn-sit-ubn.managedtest.com"
+  },
+  "authZ": {
+    "baseUrl": "https://consent-qa-ubn.ob.managedtest.com",
+    "hostHeader": "consent-qa-ubn.ob.managedtest.com"
+  },
+  "executionEnvironment": {
+    "brand": "ubn",
+    "testEnvironment": "qa"
+  },
+  "tppAuthN": {
+    "clientId": "6lsjdfasmldkaasdfasdvfa",
+    "tokenEndpointUrl": "https://iam-authn-sit-ubn.managedtest.com/as/token.oauth2",
+    "acrValue": "urn:openbanking:psd2:ca",
+    "redirectUrl": "https://developer.natwest.com/dummy_redirect.htm"
+  },
+  "aisp": {
+    "baseUrl": "https://api-qa-ubn.ob.managedtest.com",
+    "hostHeader": "api-qa-ubn.ob.managedtest.com"
+  },
+  "pisp": {
+    "baseUrl": "https://api-qa-ubn.ob.managedtest.com",
+    "hostHeader": "api-qa-ubn.ob.managedtest.com",
+    "headers":{
+      "x-fapi-financial-id": "000158000jfaxrwdfasd",
+      "x-fapi-customer-ip-address": "127.0.0.1",
+      "x-idempotency-key": "{{UUID}}",
+      "x-fapi-interaction-id": "{{UUID}}"
+    },
+    "creditorDetails": {
+      "accountScheme": "SCAN",
+      "name": "AMCE LTD",
+      "secondaryAccountIdentifier": null
+    },
+    "amount": "1.33",
+    "currency": "GBP",
+    "endToEndId": "{{UUID_DELIMITERSLESS_31}}",
+    "instructionId": "{{UUID_DELIMITERSLESS}}",
+    "statementReference": "{{TEST_NAME_DELIMITERSLESS_18}}"
+  }
+}
