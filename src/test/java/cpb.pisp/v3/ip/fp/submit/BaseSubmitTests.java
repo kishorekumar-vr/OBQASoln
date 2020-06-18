@@ -97,12 +97,12 @@ public class BaseSubmitTests extends AbstractTestEnvironmentAwareSuper {
 
     private void verifyLinkInSetupResponse(final Environment env, final Response setupResponse){
         final String expectedLink = env.getPisp().getBaseUrl()+"/open-banking/v3.1/pisp/international-payments-consents/"+setupResponse.then().extract().body().path("Data.ConsentId");
-        setupResponse.then().body("Data.Links.Self", CoreMatchers.is(equalTo(expectedLink)));
+        setupResponse.then().body("Links.Self", CoreMatchers.is(equalTo(expectedLink)));
 
     }
     private void verifyLinkInSubmitResponse(final Environment env, final Response submitResponse){
         final String expectedLink = env.getPisp().getBaseUrl()+"/open-banking/v3.1/pisp/international-payments/"+submitResponse.then().extract().body().path("Data.InternationalPaymentId");
-        submitResponse.then().body("Data.Links.Self", CoreMatchers.is(equalTo(expectedLink)));
+        submitResponse.then().body("Links.Self", CoreMatchers.is(equalTo(expectedLink)));
     }
 
 }

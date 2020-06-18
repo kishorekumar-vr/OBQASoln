@@ -27,8 +27,10 @@ public class ConfigTemplateUtils {
             final Field[] fieldsOnObject = object.getClass().getDeclaredFields();
 
             Arrays.stream(fieldsOnObject).forEach((ThrowingConsumer<Field>) field -> {
-
+               // System.out.println(field.getName() + " Before: "+field.isAccessible());
+                //if(!StringUtils.equalsIgnoreCase(field.getName(),"headers")) {
                 field.setAccessible(true);
+                //System.out.println(field.getName() + " After: "+field.isAccessible());
                 if (this.isStringType(field)) {
 
                     final String possibleFieldValue = (String) field.get(object);
@@ -59,7 +61,8 @@ public class ConfigTemplateUtils {
                 }else if (this.isNotForbiddenForParsingType(field)){
                     this.parseOutTemplatedValues(testCaseId,field.get(object));
                 }
-            });
+           // }
+        });
         }
     }
 
@@ -76,7 +79,7 @@ public class ConfigTemplateUtils {
 
     private boolean isStringType(final Field field) {
         final String fieldType = field.getType().getName();
-        field.getName();
+        //field.getName();
         return isStringType(fieldType);
     }
 

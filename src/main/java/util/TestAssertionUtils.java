@@ -16,10 +16,10 @@ public class TestAssertionUtils {
         validateContentTypeHeader(actualResponse);
         if(env.getPisp()!=null && env.getPisp().getHeaders()!=null) {
             if (env.getPisp().getHeaders().get("x-fapi-interaction-id") != null) {
-                log.info("Value of x-fapi-interaction-id in Response Header:{}" + actualResponse.getHeader("x-fapi-interaction-id"));
+                log.info("Value of x-fapi-interaction-id in Response Header : {}", actualResponse.getHeader("x-fapi-interaction-id"));
                 assertThat(actualResponse.getHeader("x-fapi-interaction-id"), equalToIgnoringCase(env.getPisp().getHeaders().get("x-fapi-interaction-id")));
             } else {
-                log.info("value of x-fapi-interaction-id in Resonse header: {}", actualResponse.getHeader("x-fapi-interaction-id"));
+                log.info("value of x-fapi-interaction-id in Resonse header : {}", actualResponse.getHeader("x-fapi-interaction-id"));
                 assertThat(actualResponse.getHeader("x-fapi-interaction-id"), Is.isA(String.class));
             }
         }
